@@ -10,10 +10,6 @@ def read_root():
 
 MICROSERVICE_LINK = "https://appbox.qatar.cmu.edu/313-teams/team_name/"
 
-TEAM_MENTORS = {"1": "Seckhen", "2": "Aadi",
-              "3": "Steve", "4": "Seckhen",
-              "5": "Aadi", "6": "Steve"}
-
 @app.get("/team_info/{team_id}")
 def get_team_info(team_id: str):
 
@@ -28,12 +24,13 @@ def get_team_info(team_id: str):
     print(data)
 
     team_name = data["team_name"]
-    
+
     # TODO Fix this to return correct values for correct team ids.
     if team_id == "1":
         return {
+            "team_id" : team_id,
             "team_name": "<name of team 1>",
-            "mentor": TEAM_MENTORS[team_id]
+            "mentor": "Seckhen"
         }
     else:
         raise HTTPException(status_code=404, detail="Invalid team id")
