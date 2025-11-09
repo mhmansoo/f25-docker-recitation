@@ -26,11 +26,11 @@ def get_team_info(team_id: str):
     team_name = data["team_name"]
 
     # TODO Fix this to return correct values for correct team ids.
-    if team_id == "1":
+    if team_id == "5":
         return {
-            "team_id" : team_id,
-            "team_name": "<name of team 1>",
-            "mentor": "Seckhen"
+            "team_id" : 5,
+            "team_name": "Debug-Divas",
+            "mentor": "Aadi"
         }
     else:
         raise HTTPException(status_code=404, detail="Invalid team id")
